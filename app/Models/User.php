@@ -4,12 +4,15 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Models\Ticket;
+use App\Models\Demande;
 use App\Mail\WelcomeUserMail;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+
 
 class User extends Authenticatable
 {
@@ -22,7 +25,10 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'surname',
         'email',
+        'mobile',
+        'phoneBureau',
         'password',
     ];
 
@@ -46,22 +52,18 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function tickets()
+    // public function tickets()
+    // {
+    //     return $this->hasMany(Ticket::class, 'assigned_to_user_id', 'id');
+    // }
+
+    public function demandes(): HasMany
     {
-        return $this->hasMany(Ticket::class, 'assigned_to_user_id', 'id');
+        return $this->hasMany(Demande::class);
     }
 
-    // protected function boot(){
-
-    //     parent::boot();
-
-    //     static::created(function($user){
-    //         $data = $user->profile()->create([
-    //             'title' => 'profile de '.$user->username
-    //         ]);
-
-    //         Mail::to($data->user->email)->send(new WelcomeUserMail($data->user));
-    //     });
-
+    // public function technicien()
+    // {
+    //     return $this->hasOne(Technicien::class);
     // }
 }

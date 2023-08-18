@@ -20,9 +20,9 @@
     <div class="row">
       <!-- Title Start -->
       <div class="col mb-2">
-        <a href="Dashboards.Patient.html" class="muted-link pb-1 d-inline-block breadcrumb-back">
+        <a href="{{route('user.home')}}" class="muted-link pb-1 d-inline-block breadcrumb-back">
             <i data-acorn-icon="chevron-left" data-acorn-size="13"></i>
-            <span class="text-small align-middle">Home</span>
+            <span class="text-small align-middle">Accuiel</span>
           </a>
         <h1 class="mb-2 pb-0 display-4" id="title">Tickets</h1>
       </div>
@@ -33,7 +33,7 @@
         <!-- Add New Button Start -->        
         <a href="#" class="btn btn-outline-primary btn-icon btn-icon-start w-100 w-md-auto" data-bs-toggle="modal" data-bs-target="#ticketModal" data-bs-focus="false">
           <i data-acorn-icon="plus"></i>
-          <span>New Ticket</span>
+          <span>Nouveau Ticket</span>
         </a>        
         <!-- Add New Button End -->
       </div>
@@ -323,7 +323,7 @@
         </ul>
       </div>
     </div>
-  </div>
+</div>
   <!-- Item List End -->
 
 

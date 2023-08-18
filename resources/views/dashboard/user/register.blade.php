@@ -75,7 +75,11 @@
             @csrf
             <div class="mb-3 filled form-group tooltip-end-top">
               <i data-acorn-icon="user"></i>
-              <input class="form-control" placeholder="Nom Complet" name="name" value="{{ old('name')}}"/>
+              <input class="form-control" placeholder="Nom" name="name" value="{{ old('name')}}"/>
+            </div>
+            <div class="mb-3 filled form-group tooltip-end-top">
+              <i data-acorn-icon="user"></i>
+              <input class="form-control" placeholder="Prénom" name="surname" value="{{ old('surname')}}"/>
             </div>
             <div class="mb-3 filled form-group tooltip-end-top">
               <i data-acorn-icon="email"></i>

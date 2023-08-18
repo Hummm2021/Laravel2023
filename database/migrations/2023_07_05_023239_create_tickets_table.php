@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->text('content');
-            $table->string('status')->default('ouvert');
+            $table->enum('status', ['ouvert', 'en cours', 'fermé'])->default('ouvert');
             // $table->string('priority')->default('normal');
             // $table->string('category')->default('general');
             $table->string('author_name');
@@ -23,6 +23,10 @@ return new class extends Migration
             $table->timestamps();
         });
     }
+    // Schema::table('table_name', function (Blueprint $table) {
+    //     $table->enum('status', ['ouvert', 'en cours', 'fermé'])->default('ouvert');
+    // });
+    
 
     /**
      * Reverse the migrations.

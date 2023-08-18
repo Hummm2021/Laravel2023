@@ -30,20 +30,10 @@ class Ticket extends Model
         'created_at',
         'updated_at',
         'deleted_at',
-    ];
-
-    
-
-    // public function tickets()
-    // {
-    //     return $this->hasMany(Ticket::class, 'assigned_to_user_id', 'id');
-    // }
+    ];    
 
     public function assigned_to_user()
     {
         return $this->belongsTo(User::class, 'assigned_to_user_id');
-    }
-
-
-    
+    }    
 }

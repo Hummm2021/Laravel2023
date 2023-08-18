@@ -1,356 +1,359 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <!-- Required meta tags-->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="au theme template">
-    <meta name="author" content="Hau Nguyen">
-    <meta name="keywords" content="au theme template">
-    
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-
-    <!-- Title Page-->
+<html
+  lang="fr"
+  data-footer="true"
+  data-override='{"attributes": {"placement": "horizontal","layout": "boxed" }, "showSettings":false, "storagePrefix": "starter-project"}'
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <title>{{ config('app.name', 'Laravel') }}</title>
-    
-    <!-- Fontfaces CSS-->
-    <link href="{{asset('assets/css/font-face.css')}}" rel="stylesheet" media="all">
-    <link href="{{asset('assets/vendor/font-awesome-4.7/css/font-awesome.min.css')}}" rel="stylesheet" media="all">
-    <link href="{{asset('assets/vendor/font-awesome-5/css/fontawesome-all.min.css')}}" rel="stylesheet" media="all">
-    <link href="{{asset('assets/vendor/mdi-font/css/material-design-iconic-font.min.css')}}" rel="stylesheet" media="all">
+    <meta name="description" content="An empty page with a boxed horizontal layout." />
+    <!-- Favicon Tags Start -->
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="{{asset('acorn/img/favicon/apple-touch-icon-57x57.png')}}" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{asset('acorn/img/favicon/apple-touch-icon-114x114.png')}}" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{asset('acorn/img/favicon/apple-touch-icon-72x72.png')}}" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{asset('acorn/img/favicon/apple-touch-icon-144x144.png')}}" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="{{asset('acorn/img/favicon/apple-touch-icon-60x60.png')}}" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="{{asset('acorn/img/favicon/apple-touch-icon-120x120.png')}}" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="{{asset('acorn/img/favicon/apple-touch-icon-76x76.png')}}" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="{{asset('acorn/img/favicon/apple-touch-icon-152x152.png')}}" />
+    <link rel="icon" type="image/png" href="{{asset('acorn/img/favicon/favicon-196x196.png')}}" sizes="196x196" />
+    <link rel="icon" type="image/png" href="{{asset('acorn/img/favicon/favicon-96x96.png')}}" sizes="96x96" />
+    <link rel="icon" type="image/png" href="{{asset('acorn/img/favicon/favicon-32x32.png')}}" sizes="32x32" />
+    <link rel="icon" type="image/png" href="{{asset('acorn/img/favicon/favicon-16x16.png')}}" sizes="16x16" />
+    <link rel="icon" type="image/png" href="{{asset('acorn/img/favicon/favicon-128.png')}}" sizes="128x128" />
+    {{-- <meta name="application-name" content="&nbsp;" /> --}}
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="{{asset('acorn/img/favicon/mstile-144x144.png')}}" />
+    <meta name="msapplication-square70x70logo" content="{{asset('acorn/img/favicon/mstile-70x70.png')}}" />
+    <meta name="msapplication-square150x150logo" content="{{asset('acorn/img/favicon/mstile-150x150.png')}}" />
+    <meta name="msapplication-wide310x150logo" content="{{asset('acorn/img/favicon/mstile-310x150.png')}}" />
+    <meta name="msapplication-square310x310logo" content="{{asset('acorn/img/favicon/mstile-310x310.png')}}" />
+    <!-- Favicon Tags End -->
+    <!-- Font Tags Start -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{{asset('acorn/font/CS-Interface/style.css')}}" />
+    <!-- Font Tags End -->
+    <!-- Vendor Styles Start -->
+    <link rel="stylesheet" href="{{asset('acorn/css/vendor/bootstrap.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('acorn/css/vendor/OverlayScrollbars.min.css')}}" />
 
-    <!-- Bootstrap CSS-->
-    <link href="{{asset('assets/vendor/bootstrap-4.1/bootstrap.min.css')}}" rel="stylesheet" media="all">
+    <!-- Vendor Styles End -->
+    <!-- Template Base Styles Start -->
+    <link rel="stylesheet" href="{{asset('acorn/css/styles.css')}}" />
+    <!-- Template Base Styles End -->
 
-    <!-- Vendor CSS-->
-    <link href="{{asset('assets/vendor/animsition/animsition.min.css')}}" rel="stylesheet" media="all">
-    <link href="{{asset('assets/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css')}}" rel="stylesheet" media="all">
-    <link href="{{asset('assets/vendor/wow/animate.cs')}}s" rel="stylesheet" media="all">
-    <link href="{{asset('assets/vendor/css-hamburgers/hamburgers.min.css')}}" rel="stylesheet" media="all">
-    <link href="{{asset('assets/vendor/slick/slick.css')}}" rel="stylesheet" media="all">
-    <link href="{{asset('assets/vendor/select2/select2.min.css')}}" rel="stylesheet" media="all">
-    <link href="{{asset('assets/vendor/perfect-scrollbar/perfect-scrollbar.css')}}" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="{{asset('acorn/css/main.css')}}" />
+    <script src="{{asset('acorn/js/base/loader.js')}}"></script>
+  </head>
 
-    <!-- Main CSS-->
-    <link href="{{asset('assets/css/theme.css')}}" rel="stylesheet" media="all">
+  <body>
+    <div id="root">
+      <div id="nav" class="nav-container d-flex">
+        <div class="nav-content d-flex">
+          <!-- Logo Start -->
+          <div class="logo position-relative">
+            <a href="#">
+              <!-- Logo can be added directly -->
+              <!-- <img src="img/logo/logo-white.svg" alt="logo" /> -->
 
-</head>
+              <!-- Or added via css to provide different ones for different color themes -->
+              <div class="img"></div>
+            </a>
+          </div>
+          <!-- Logo End -->
 
-<body class="animsition">
-    <div class="page-wrapper">
-        <!-- HEADER MOBILE-->
-        <header class="header-mobile d-block d-lg-none">
-            <div class="header-mobile__bar">
-                <div class="container-fluid">
-                    <div class="header-mobile-inner">
-                        <a class="logo" href="index.html">
-                            <img src="images/icon/logo.png" alt="Coolweb" />
-                        </a>
-                        <button class="hamburger hamburger--slider" type="button">
-                            <span class="hamburger-box">
-                                <span class="hamburger-inner"></span>
-                            </span>
-                        </button>
-                    </div>
-                </div>
+          <!-- Language Switch Start -->
+          {{-- <div class="language-switch-container">
+            <button class="btn btn-empty language-button dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">EN</button>
+            <div class="dropdown-menu">
+              <a href="#" class="dropdown-item">DE</a>
+              <a href="#" class="dropdown-item active">EN</a>
+              <a href="#" class="dropdown-item">ES</a>
             </div>
-            <nav class="navbar-mobile">
-                <div class="container-fluid">
-                    <ul class="navbar-mobile__list list-unstyled">
-                        <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-tachometer-alt"></i>Dashboard
-                            </a>
-                        </li>
-                        <li>
-                            <a href="chart.html">
-                                <i class="fas fa-chart-bar"></i>Charts</a>
-                        </li>
-                        <li>
-                            <a href="table.html">
-                                <i class="fas fa-table"></i>Tables</a>
-                        </li>
-                        <li>
-                            <a href="form.html">
-                                <i class="far fa-check-square"></i>Forms</a>
-                        </li>
-                        <li>
-                            <a href="calendar.html">
-                                <i class="fas fa-calendar-alt"></i>Calendar</a>
-                        </li>
-                        <li>
-                            <a href="map.html">
-                                <i class="fas fa-map-marker-alt"></i>Maps</a>
-                        </li>
-                        <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-copy"></i>Pages</a>
-                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                                <li>
-                                    <a href="login.html">Login</a>
-                                </li>
-                                <li>
-                                    <a href="register.html">Register</a>
-                                </li>
-                                <li>
-                                    <a href="forget-pass.html">Forget Password</a>
-                                </li>
-                            </ul>
-                        </li>
-                        
-                    </ul>
-                </div>
-            </nav>
-        </header>
-        <!-- END HEADER MOBILE-->
+          </div> --}}
+          <!-- Language Switch End -->
 
-        <!-- MENU SIDEBAR-->
-        {{-- <aside class="menu-sidebar d-none d-lg-block bg-dark">
-            <div class="logo bg-dark">
+          <!-- User Menu Start -->
+          <div class="user-container d-flex">
+            <a href="#" class="d-flex user position-relative" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img class="profile" alt="profile" src="{{asset('acorn/img/profile/profile-9.webp')}}" />
+              {{-- <div class="name">name</div> --}}
+              <div class="name">{{Auth::guard('admin')->user()->name}}</div>
+            </a>
+            <div class="dropdown-menu dropdown-menu-end user-menu wide">
+              <div class="row mb-3 ms-0 me-0">
+                <div class="col-12 ps-1 mb-2">
+                  <div class="text-extra-small text-primary">COMPTE</div>
+                </div>
+                <div class="col-6 ps-1 pe-1">
+                  <ul class="list-unstyled">
+                    <li>
+                      <a href="#">Profile</a>
+                      {{-- <a href="{{route('user.profile', Auth::guard('web')->user()->id)}}">Profile</a> --}}
+                    </li>
+                    <li>
+                      <a href="#">Calendar</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-6 pe-1 ps-1">
+                  <ul class="list-unstyled">
+                    <li>
+                      <a href="#">Security</a>
+                    </li>
+                    <li>
+                      <a href="#">Billing</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="row mb-1 ms-0 me-0">
+                <div class="col-12 p-1 mb-2 pt-2">
+                  <div class="text-extra-small text-primary">APPLICATION</div>
+                </div>
+                <div class="col-6 ps-1 pe-1">
+                  <ul class="list-unstyled">
+                    <li>
+                      <a href="#">Themes</a>
+                    </li>
+                    <li>
+                      <a href="#">Language</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-6 pe-1 ps-1">
+                  <ul class="list-unstyled">
+                    <li>
+                      <a href="#">Devices</a>
+                    </li>
+                    <li>
+                      <a href="#">Storage</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="row mb-1 ms-0 me-0">
+                <div class="col-12 p-1 mb-3 pt-3">
+                  <div class="separator-light"></div>
+                </div>
+                <div class="col-6 ps-1 pe-1">
+                  <ul class="list-unstyled">
+                    <li>
+                      <a href="#">
+                        <i data-acorn-icon="help" class="me-2" data-acorn-size="17"></i>
+                        <span class="align-middle">Help</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i data-acorn-icon="file-text" class="me-2" data-acorn-size="17"></i>
+                        <span class="align-middle">Docs</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-6 pe-1 ps-1">
+                  <ul class="list-unstyled">
+                    <li>
+                      <a href="#">
+                        <i data-acorn-icon="gear" class="me-2" data-acorn-size="17"></i>
+                        <span class="align-middle">Settings</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="{{ route('admin.logout')}}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                        <i data-acorn-icon="logout" class="me-2" data-acorn-size="17"></i>
+                        <span class="align-middle">Logout</span>
+                      </a>
+                      <form action="{{route('admin.logout')}}" method="POST" class="d-none" id="logout-form">@csrf</form>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- User Menu End -->
+
+          <!-- Icons Menu Start -->
+          <ul class="list-unstyled list-inline text-center menu-icons">
+            <li class="list-inline-item">
+              <a href="#" data-bs-toggle="modal" data-bs-target="#searchPagesModal">
+                <i data-acorn-icon="search" data-acorn-size="18"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" id="pinButton" class="pin-button">
+                <i data-acorn-icon="lock-on" class="unpin" data-acorn-size="18"></i>
+                <i data-acorn-icon="lock-off" class="pin" data-acorn-size="18"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" id="colorButton">
+                <i data-acorn-icon="light-on" class="light" data-acorn-size="18"></i>
+                <i data-acorn-icon="light-off" class="dark" data-acorn-size="18"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" data-bs-toggle="dropdown" data-bs-target="#notifications" aria-haspopup="true" aria-expanded="false" class="notification-button">
+                <div class="position-relative d-inline-flex">
+                  <i data-acorn-icon="bell" data-acorn-size="18"></i>
+                  <span class="position-absolute notification-dot rounded-xl"></span>
+                </div>
+              </a>
+              <div class="dropdown-menu dropdown-menu-end wide notification-dropdown scroll-out" id="notifications">
+                <div class="scroll">
+                  <ul class="list-unstyled border-last-none">
+                    <li class="mb-3 pb-3 border-bottom border-separator-light d-flex">
+                      <img src="img/profile/profile-1.webp" class="me-3 sw-4 sh-4 rounded-xl align-self-center" alt="..." />
+                      <div class="align-self-center">
+                        <a href="#">Joisse Kaycee just sent a new comment!</a>
+                      </div>
+                    </li>
+                    <li class="mb-3 pb-3 border-bottom border-separator-light d-flex">
+                      <img src="img/profile/profile-2.webp" class="me-3 sw-4 sh-4 rounded-xl align-self-center" alt="..." />
+                      <div class="align-self-center">
+                        <a href="#">New order received! It is total $147,20.</a>
+                      </div>
+                    </li>
+                    <li class="mb-3 pb-3 border-bottom border-separator-light d-flex">
+                      <img src="img/profile/profile-3.webp" class="me-3 sw-4 sh-4 rounded-xl align-self-center" alt="..." />
+                      <div class="align-self-center">
+                        <a href="#">3 items just added to wish list by a user!</a>
+                      </div>
+                    </li>
+                    <li class="pb-3 pb-3 border-bottom border-separator-light d-flex">
+                      <img src="img/profile/profile-6.webp" class="me-3 sw-4 sh-4 rounded-xl align-self-center" alt="..." />
+                      <div class="align-self-center">
+                        <a href="#">Kirby Peters just sent a new message!</a>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <!-- Icons Menu End -->
+
+          <!-- Menu Start -->
+          <div class="menu-container flex-grow-1">
+            <ul id="menu" class="menu">
+                <li>
+                    <a href="{{ route('admin.home') }}" >
+                        <i data-acorn-icon="screen" class="icon" data-acorn-size="18"></i>
+                        <span class="label">Accueil</span>
+                    </a>
+                </li>
+              <li>                
                 <a href="#">
-                    <h2 style="color: white;">Helpdesk</h2>
+                  <i data-acorn-icon="file-text" class="icon" data-acorn-size="18"></i>
+                  <span class="label">Tickets</span>
                 </a>
-            </div>
-            <div class="menu-sidebar__content js-scrollbar1">
-                <nav class="navbar-sidebar">
-                    <div class="" style="align-items: baseline">
-                        <div class="" style="margin: 15px">
-                            <div class="image">
-                                <h1 class="far fa-user" style="font-size: 50px; color: white;"></h1>
-                            </div>
-                            <div class="content" style="margin-bottom: 20px">
-                                <p class="name">
-                                    {{Auth::guard('web')->user()->name}} <br>
-                                    {{Auth::guard('web')->user()->email}}
-                                </p>                                    
-                            </div>
-                        </div>
-                    </div>
-                    <ul class="list-unstyled navbar__list">
-                        <li>
-                            <a href="#">
-                                <i class="zmdi zmdi-account"></i>Mon compte</a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="zmdi zmdi-settings"></i>Réglages</a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fas fa-calendar-alt"></i>Calendar</a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fas fa-history"></i>Historique</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('user.logout')}}" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i class="zmdi zmdi-power"></i>Logout</a></a>
-                                                <form action="{{route('user.logout')}}" method="POST" class="d-none" id="logout-form">@csrf</form>
-                        </li>
-                        
-                    </ul>
-                </nav>
-            </div>
-        </aside> --}}
-        <!-- END MENU SIDEBAR-->
+              </li>
+              <li>
+                <a href="#">
+                  <i data-acorn-icon="trend-up" class="icon" data-acorn-size="18"></i>
+                  <span class="label">Upgrade</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i data-acorn-icon="messages" class="icon" data-acorn-size="18"></i>
+                  <span class="label">Community</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!-- Menu End -->
 
-        <!-- PAGE CONTAINER-->
-        <div class="page-container">
-            <!-- HEADER DESKTOP-->
-            <header class="header-desktop bg-dark">
-                <div class="section__content section__content--p30">
-                    <div class="container-fluid">
-                        <div class="header-wrap" style="justify-content: center;">
-                            <div class="header-button">
-                                {{--<div class="noti-wrap">                        
-                                     <div class="noti__item js-item-menu">
-                                        <i class="zmdi zmdi-notifications"></i>
-                                        <span class="quantity">3</span>
-                                        <div class="notifi-dropdown js-dropdown">
-                                            <div class="notifi__title">
-                                                <p>You have 3 Notifications</p>
-                                            </div>
-                                            <div class="notifi__item">
-                                                <div class="bg-c1 img-cir img-40">
-                                                    <i class="zmdi zmdi-email-open"></i>
-                                                </div>
-                                                <div class="content">
-                                                    <p>You got a email notification</p>
-                                                    <span class="date">April 12, 2018 06:50</span>
-                                                </div>
-                                            </div>
-                                            <div class="notifi__item">
-                                                <div class="bg-c2 img-cir img-40">
-                                                    <i class="zmdi zmdi-account-box"></i>
-                                                </div>
-                                                <div class="content">
-                                                    <p>Your account has been blocked</p>
-                                                    <span class="date">April 12, 2018 06:50</span>
-                                                </div>
-                                            </div>
-                                            <div class="notifi__item">
-                                                <div class="bg-c3 img-cir img-40">
-                                                    <i class="zmdi zmdi-file-text"></i>
-                                                </div>
-                                                <div class="content">
-                                                    <p>You got a new file</p>
-                                                    <span class="date">April 12, 2018 06:50</span>
-                                                </div>
-                                            </div>
-                                            <div class="notifi__footer">
-                                                <a href="#">All notifications</a>
-                                            </div>
-                                        </div>
-                                    </div> --}}
+          <!-- Mobile Buttons Start -->
+          <div class="mobile-buttons-container">
+            <!-- Scrollspy Mobile Button Start -->
+            <a href="#" id="scrollSpyButton" class="spy-button" data-bs-toggle="dropdown">
+              <i data-acorn-icon="menu-dropdown"></i>
+            </a>
+            <!-- Scrollspy Mobile Button End -->
 
-                                {{-- <div class="noti__item js-item-menu"> --}}
-                                    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                                        <a class="navbar-brand" href="#">Helpdesk |</a>
-                                        <div class="collapse navbar-collapse" id="navbarNav">
-                                            <ul class="navbar-nav">
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="{{route('user.home')}}">Accueil </a>
-                                            </li> 
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="{{route('user.ticket')}}">Tickets</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="#">Pricing</a>
-                                            </li>                                            
-                                            </ul>
-                                        </div>
-                                    </nav>    
-                                {{-- </div> --}}
-                                <div class="account-wrap">
-                                    <div class="account-item clearfix js-item-menu" >
-                                        <div class="image">
-                                            <img src="{{asset('assets/images/icon/avatar-01.jpg')}}" alt="{{Auth::guard('web')->user()->name}}" />
-                                        </div>
-                                        <div class="content" >
-                                            <a class="js-acc-btn" href="#" style="color: white">{{Auth::guard('web')->user()->name}}</a>
-                                        </div>
-                                        <div class="account-dropdown js-dropdown">
-                                            <div class="info clearfix">
-                                                <div class="image">
-                                                    <a href="#">
-                                                        <img src="{{asset('assets/images/icon/avatar-01.jpg')}}" alt="{{Auth::guard('web')->user()->name}}" />
-                                                    </a>
-                                                </div>
-                                                <div class="content ">
-                                                    <h5 class="name">
-                                                        <a href="#">{{Auth::guard('web')->user()->name}}</a>
-                                                    </h5>
-                                                    <span class="email">{{Auth::guard('web')->user()->email}}</span>                                                    
-                                                </div>
-                                            </div>
-                                            <div class="account-dropdown__body">
-                                                <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-account"></i>Account</a>
-                                                </div>
-                                                <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-settings"></i>Setting</a>
-                                                </div>
-                                            </div>
-                                            <div class="account-dropdown__footer">
-                                                <a href="{{ route('user.logout')}}" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i class="zmdi zmdi-power"></i>Logout</a></a>
-                                                <form action="{{route('user.logout')}}" method="POST" class="d-none" id="logout-form">@csrf</form>
-                                                    
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </header>
-            <!-- END HEADER DESKTOP-->
+            <!-- Scrollspy Mobile Dropdown Start -->
+            <div class="dropdown-menu dropdown-menu-end" id="scrollSpyDropdown"></div>
+            <!-- Scrollspy Mobile Dropdown End -->
 
-            <!-- MAIN CONTENT-->
-            {{-- @include('layouts.overview') --}}
-            <div class="main-content">                
-                <div class="section__content section__content--p30">
-                    <div class="container-fluid" >
-                        @yield('snake')
-                    </div>
-                </div>
-            </div>
+            <!-- Menu Button Start -->
+            <a href="#" id="mobileMenuButton" class="menu-button">
+              <i data-acorn-icon="menu"></i>
+            </a>
+            <!-- Menu Button End -->
+          </div>
+          <!-- Mobile Buttons End -->
         </div>
-        <!-- END PAGE CONTAINER-->
+        <div class="nav-shadow"></div>
+      </div>
 
+      <main>
+        <div class="container">
+            @yield('navbar')
+        </div>
+      </main>
     </div>
 
-    <!-- Jquery JS-->
-    <script src="{{asset('assets/vendor/jquery-3.2.1.min.js')}}"></script>
-    <!-- Bootstrap JS-->
-    <script src="{{asset('assets/vendor/bootstrap-4.1/popper.min.js')}}"></script>
-    <script src="{{asset('assets/vendor/bootstrap-4.1/bootstrap.min.js')}}"></script>
-    <!-- Vendor JS       -->
-    <script src="{{asset('assets/vendor/slick/slick.min.js')}}">
-    </script>
-    <script src="{{asset('assets/vendor/wow/wow.min.js')}}"></script>
-    <script src="{{asset('assets/vendor/animsition/animsition.min.js')}}"></script>
-    <script src="{{asset('assets/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js')}}">
-    </script>
-    <script src="{{asset('assets/vendor/counter-up/jquery.waypoints.min.js')}}"></script>
-    <script src="{{asset('assets/vendor/counter-up/jquery.counterup.min.js')}}">
-    </script>
-    <script src="{{asset('assets/vendor/circle-progress/circle-progress.min.js')}}"></script>
-    <script src="{{asset('assets/vendor/perfect-scrollbar/perfect-scrollbar.js')}}"></script>
-    <script src="{{asset('assets/vendor/chartjs/Chart.bundle.min.js')}}"></script>
-    <script src="{{asset('assets/vendor/select2/select2.min.js')}}">
-    </script>
 
-    <!-- Main JS-->
-    <script src="{{asset('assets/js/main.js')}}"></script>
+    <!-- Search Modal Start -->
+    <div class="modal fade modal-under-nav modal-search modal-close-out" id="searchPagesModal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header border-0 p-0">
+            <button type="button" class="btn-close btn btn-icon btn-icon-only btn-foreground" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body ps-5 pe-5 pb-0 border-0">
+            <input id="searchPagesInput" class="form-control form-control-xl borderless ps-0 pe-0 mb-1 auto-complete" type="text" autocomplete="off" />
+          </div>
+          <div class="modal-footer border-top justify-content-start ps-5 pe-5 pb-3 pt-3 border-0">
+            <span class="text-alternate d-inline-block m-0 me-3">
+              <i data-acorn-icon="arrow-bottom" data-acorn-size="15" class="text-alternate align-middle me-1"></i>
+              <span class="align-middle text-medium">Navigate</span>
+            </span>
+            <span class="text-alternate d-inline-block m-0 me-3">
+              <i data-acorn-icon="arrow-bottom-left" data-acorn-size="15" class="text-alternate align-middle me-1"></i>
+              <span class="align-middle text-medium">Select</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Search Modal End -->
 
-</body>
+    <!-- Vendor Scripts Start -->
+    <script src="{{asset('acorn/js/vendor/jquery-3.5.1.min.js')}}"></script>
+    <script src="{{asset('acorn/js/vendor/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{asset('acorn/js/vendor/OverlayScrollbars.min.js')}}"></script>
+    <script src="{{asset('acorn/js/vendor/autoComplete.min.js')}}"></script>
+    <script src="{{asset('acorn/js/vendor/clamp.min.js')}}"></script>
 
+    <script src="{{asset('acorn/icon/acorn-icons.js')}}"></script>
+    <script src="{{asset('acorn/icon/acorn-icons-interface.js')}}"></script>
+
+    <script src="{{asset('acorn/js/vendor/jquery.validate/jquery.validate.min.js')}}"></script>
+
+    <script src="{{asset('acorn/js/vendor/jquery.validate/additional-methods.min.js')}}"></script>
+
+    <!-- Vendor Scripts End -->
+
+    <!-- Template Base Scripts Start -->
+    <script src="{{asset('acorn/js/base/helpers.js')}}"></script>
+    <script src="{{asset('acorn/js/base/globals.js')}}"></script>
+    <script src="{{asset('acorn/js/base/nav.js')}}"></script>
+    <script src="{{asset('acorn/js/base/search.js')}}"></script>
+    <script src="{{asset('acorn/js/base/settings.js')}}"></script>
+    <!-- Template Base Scripts End -->
+    <!-- Page Specific Scripts Start -->
+
+    <script src="{{asset('acorn/js/pages/auth.login.js')}}"></script>
+
+    <script src="{{asset('acorn/js/common.js')}}"></script>
+    <script src="{{asset('acorn/js/scripts.js')}}"></script>
+    <!-- Page Specific Scripts End -->
+  </body>
 </html>
-<!-- end document-->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{{-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{ asset('bootstrap.min.css') }}">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
-</head>
-<body>
-    @yield('content')
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-</body>
-</html> --}}

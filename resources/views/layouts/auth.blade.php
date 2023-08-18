@@ -1,5 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html
+  lang="en"
+  data-footer="true"
+  data-override='{"attributes": {"placement": "vertical","layout": "fluid" }, "showSettings":false, "storagePrefix": "starter-project"}'
+>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
@@ -46,98 +50,316 @@
     <script src="{{asset('acorn/js/base/loader.js')}}"></script>
   </head>
 
-  <body class="h-100">
-    <div id="root" class="h-100">
-      <!-- Background Start -->
-      <div class="fixed-background"></div>
-      <!-- Background End -->
+  <body>
+    <div id="root">
+      <div id="nav" class="nav-container d-flex">
+        <div class="nav-content d-flex">
+          <!-- Logo Start -->
+          <div class="logo position-relative">
+            <a href="index.html">
+              <!-- Logo can be added directly -->
+              <!-- <img src="img/logo/logo-white.svg" alt="logo" /> -->
 
-      <div class="container-fluid p-0 h-100 position-relative">
-        <div class="row g-0 h-100">
-          <!-- Left Side Start -->
-          <div class="offset-0 col-12 d-none d-lg-flex offset-md-1 col-lg h-lg-100">
-            <div class="min-h-100 d-flex align-items-center">
-              <div class="w-100 w-lg-75 w-xxl-50">
-                <div>
-                  <div class="mb-5">
-                    <h1 class="display-3 text-white">Multiple Niches</h1>
-                    <h1 class="display-3 text-white">Ready for Your Project</h1>
-                  </div>
-                  <p class="h6 text-white lh-1-5 mb-5">
-                    Dynamically target high-payoff intellectual capital for customized technologies. Objectively integrate emerging core competencies before
-                    process-centric communities...
-                  </p>
-                  <div class="mb-5">
-                    <a class="btn btn-lg btn-outline-white" href="#">Learn More</a>
-                  </div>
+              <!-- Or added via css to provide different ones for different color themes -->
+              <div class="img"></div>
+            </a>
+          </div>
+          <!-- Logo End -->
+
+          <!-- Language Switch Start -->
+          <div class="language-switch-container">
+            <button class="btn btn-empty language-button dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">EN</button>
+            <div class="dropdown-menu">
+              <a href="#" class="dropdown-item">DE</a>
+              <a href="#" class="dropdown-item active">EN</a>
+              <a href="#" class="dropdown-item">ES</a>
+            </div>
+          </div>
+          <!-- Language Switch End -->
+
+          <!-- User Menu Start -->
+          <div class="user-container d-flex">
+            <a href="#" class="d-flex user position-relative" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img class="profile" alt="profile" src="img/profile/profile-9.webp" />
+              <div class="name">Lisa Jackson</div>
+            </a>
+            <div class="dropdown-menu dropdown-menu-end user-menu wide">
+              <div class="row mb-3 ms-0 me-0">
+                <div class="col-12 ps-1 mb-2">
+                  <div class="text-extra-small text-primary">ACCOUNT</div>
+                </div>
+                <div class="col-6 ps-1 pe-1">
+                  <ul class="list-unstyled">
+                    <li>
+                      <a href="#">User Info</a>
+                    </li>
+                    <li>
+                      <a href="#">Preferences</a>
+                    </li>
+                    <li>
+                      <a href="#">Calendar</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-6 pe-1 ps-1">
+                  <ul class="list-unstyled">
+                    <li>
+                      <a href="#">Security</a>
+                    </li>
+                    <li>
+                      <a href="#">Billing</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="row mb-1 ms-0 me-0">
+                <div class="col-12 p-1 mb-2 pt-2">
+                  <div class="text-extra-small text-primary">APPLICATION</div>
+                </div>
+                <div class="col-6 ps-1 pe-1">
+                  <ul class="list-unstyled">
+                    <li>
+                      <a href="#">Themes</a>
+                    </li>
+                    <li>
+                      <a href="#">Language</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-6 pe-1 ps-1">
+                  <ul class="list-unstyled">
+                    <li>
+                      <a href="#">Devices</a>
+                    </li>
+                    <li>
+                      <a href="#">Storage</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="row mb-1 ms-0 me-0">
+                <div class="col-12 p-1 mb-3 pt-3">
+                  <div class="separator-light"></div>
+                </div>
+                <div class="col-6 ps-1 pe-1">
+                  <ul class="list-unstyled">
+                    <li>
+                      <a href="#">
+                        <i data-acorn-icon="help" class="me-2" data-acorn-size="17"></i>
+                        <span class="align-middle">Help</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i data-acorn-icon="file-text" class="me-2" data-acorn-size="17"></i>
+                        <span class="align-middle">Docs</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-6 pe-1 ps-1">
+                  <ul class="list-unstyled">
+                    <li>
+                      <a href="#">
+                        <i data-acorn-icon="gear" class="me-2" data-acorn-size="17"></i>
+                        <span class="align-middle">Settings</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i data-acorn-icon="logout" class="me-2" data-acorn-size="17"></i>
+                        <span class="align-middle">Logout</span>
+                      </a>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
           </div>
-          <!-- Left Side End -->
+          <!-- User Menu End -->
 
-          <!-- Right Side Start -->
-          <div class="col-12 col-lg-auto h-100 pb-4 px-4 pt-0 p-lg-0">
-            <div class="sw-lg-70 min-h-100 bg-foreground d-flex justify-content-center align-items-center shadow-deep py-5 full-page-content-right-border">
-              <div class="sw-lg-50 px-5">
-                <div class="sh-11">
-                  <a href="#">
-                    <div class="logo-default"></div>
-                  </a>
+          <!-- Icons Menu Start -->
+          <ul class="list-unstyled list-inline text-center menu-icons">
+            <li class="list-inline-item">
+              <a href="#" data-bs-toggle="modal" data-bs-target="#searchPagesModal">
+                <i data-acorn-icon="search" data-acorn-size="18"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" id="pinButton" class="pin-button">
+                <i data-acorn-icon="lock-on" class="unpin" data-acorn-size="18"></i>
+                <i data-acorn-icon="lock-off" class="pin" data-acorn-size="18"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" id="colorButton">
+                <i data-acorn-icon="light-on" class="light" data-acorn-size="18"></i>
+                <i data-acorn-icon="light-off" class="dark" data-acorn-size="18"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" data-bs-toggle="dropdown" data-bs-target="#notifications" aria-haspopup="true" aria-expanded="false" class="notification-button">
+                <div class="position-relative d-inline-flex">
+                  <i data-acorn-icon="bell" data-acorn-size="18"></i>
+                  <span class="position-absolute notification-dot rounded-xl"></span>
                 </div>
-                <div class="mb-5">
-                  <h2 class="cta-1 mb-0 text-primary">Welcome,</h2>
-                  <h2 class="cta-1 text-primary">let's get started!</h2>
-                </div>
-                <div class="mb-5">
-                  <p class="h6">Please use your credentials to login.</p>
-                  <p class="h6">
-                    If you are not a member, please
-                    <a href="#">register</a>
-                    .
-                  </p>
-                </div>
-                <div>
-                    @yield('content')
+              </a>
+              <div class="dropdown-menu dropdown-menu-end wide notification-dropdown scroll-out" id="notifications">
+                <div class="scroll">
+                  <ul class="list-unstyled border-last-none">
+                    <li class="mb-3 pb-3 border-bottom border-separator-light d-flex">
+                      <img src="img/profile/profile-1.webp" class="me-3 sw-4 sh-4 rounded-xl align-self-center" alt="..." />
+                      <div class="align-self-center">
+                        <a href="#">Joisse Kaycee just sent a new comment!</a>
+                      </div>
+                    </li>
+                    <li class="mb-3 pb-3 border-bottom border-separator-light d-flex">
+                      <img src="img/profile/profile-2.webp" class="me-3 sw-4 sh-4 rounded-xl align-self-center" alt="..." />
+                      <div class="align-self-center">
+                        <a href="#">New order received! It is total $147,20.</a>
+                      </div>
+                    </li>
+                    <li class="mb-3 pb-3 border-bottom border-separator-light d-flex">
+                      <img src="img/profile/profile-3.webp" class="me-3 sw-4 sh-4 rounded-xl align-self-center" alt="..." />
+                      <div class="align-self-center">
+                        <a href="#">3 items just added to wish list by a user!</a>
+                      </div>
+                    </li>
+                    <li class="pb-3 pb-3 border-bottom border-separator-light d-flex">
+                      <img src="img/profile/profile-6.webp" class="me-3 sw-4 sh-4 rounded-xl align-self-center" alt="..." />
+                      <div class="align-self-center">
+                        <a href="#">Kirby Peters just sent a new message!</a>
+                      </div>
+                    </li>
+                  </ul>
                 </div>
               </div>
-            </div>
+            </li>
+          </ul>
+          <!-- Icons Menu End -->
+
+          <!-- Menu Start -->
+          <div class="menu-container flex-grow-1">
+            <ul id="menu" class="menu">
+              <li>
+                <a href="Horizontal.html">
+                  <i data-acorn-icon="grid-2" class="icon" data-acorn-size="18"></i>
+                  <span class="label">Horizontal</span>
+                </a>
+              </li>
+              <li>
+                <a href="Vertical.html">
+                  <i data-acorn-icon="grid-3" class="icon" data-acorn-size="18"></i>
+                  <span class="label">Vertical</span>
+                </a>
+              </li>
+            </ul>
           </div>
-          <!-- Right Side End -->
+          <!-- Menu End -->
+
+          <!-- Mobile Buttons Start -->
+          <div class="mobile-buttons-container">
+            <!-- Scrollspy Mobile Button Start -->
+            <a href="#" id="scrollSpyButton" class="spy-button" data-bs-toggle="dropdown">
+              <i data-acorn-icon="menu-dropdown"></i>
+            </a>
+            <!-- Scrollspy Mobile Button End -->
+
+            <!-- Scrollspy Mobile Dropdown Start -->
+            <div class="dropdown-menu dropdown-menu-end" id="scrollSpyDropdown"></div>
+            <!-- Scrollspy Mobile Dropdown End -->
+
+            <!-- Menu Button Start -->
+            <a href="#" id="mobileMenuButton" class="menu-button">
+              <i data-acorn-icon="menu"></i>
+            </a>
+            <!-- Menu Button End -->
+          </div>
+          <!-- Mobile Buttons End -->
         </div>
+        <div class="nav-shadow"></div>
       </div>
+
+      <main>
+        <div class="container">
+          <!-- Title and Top Buttons Start -->
+          <div class="page-title-container">
+            <div class="row">
+              <!-- Title Start -->
+              <div class="col-12 col-md-7">
+                <h1 class="mb-0 pb-0 display-4" id="title">Vertical Starter Page</h1>
+                <nav class="breadcrumb-container d-inline-block" aria-label="breadcrumb">
+                  <ul class="breadcrumb pt-0">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                  </ul>
+                </nav>
+              </div>
+              <!-- Title End -->
+            </div>
+          </div>
+          <!-- Title and Top Buttons End -->
+
+          <!-- Content Start -->
+          <div class="card mb-2">
+            <div class="card-body h-100">An empty page with a fluid vertical layout.</div>
+          </div>
+          <!-- Content End -->
+        </div>
+      </main>
+      <!-- Layout Footer Start -->
+
+      <!-- Layout Footer End -->
     </div>    
 
+    <!-- Search Modal Start -->
+    <div class="modal fade modal-under-nav modal-search modal-close-out" id="searchPagesModal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header border-0 p-0">
+            <button type="button" class="btn-close btn btn-icon btn-icon-only btn-foreground" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body ps-5 pe-5 pb-0 border-0">
+            <input id="searchPagesInput" class="form-control form-control-xl borderless ps-0 pe-0 mb-1 auto-complete" type="text" autocomplete="off" />
+          </div>
+          <div class="modal-footer border-top justify-content-start ps-5 pe-5 pb-3 pt-3 border-0">
+            <span class="text-alternate d-inline-block m-0 me-3">
+              <i data-acorn-icon="arrow-bottom" data-acorn-size="15" class="text-alternate align-middle me-1"></i>
+              <span class="align-middle text-medium">Navigate</span>
+            </span>
+            <span class="text-alternate d-inline-block m-0 me-3">
+              <i data-acorn-icon="arrow-bottom-left" data-acorn-size="15" class="text-alternate align-middle me-1"></i>
+              <span class="align-middle text-medium">Select</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Search Modal End -->
 
     <!-- Vendor Scripts Start -->
-    <script src="{{asset('acorn/js/vendor/jquery-3.5.1.min.js')}}"></script>
-    <script src="{{asset('acorn/js/vendor/bootstrap.bundle.min.js')}}"></script>
-    <script src="{{asset('acorn/js/vendor/OverlayScrollbars.min.js')}}"></script>
-    <script src="{{asset('acorn/js/vendor/autoComplete.min.js')}}"></script>
-    <script src="{{asset('acorn/js/vendor/clamp.min.js')}}"></script>
-
-    <script src="{{asset('acorn/icon/acorn-icons.js')}}"></script>
-    <script src="{{asset('acorn/icon/acorn-icons-interface.js')}}"></script>
-
-    <script src="{{asset('acorn/js/vendor/jquery.validate/jquery.validate.min.js')}}"></script>
-
-    <script src="{{asset('acorn/js/vendor/jquery.validate/additional-methods.min.js')}}"></script>
+    <script src="js/vendor/jquery-3.5.1.min.js"></script>
+    <script src="js/vendor/bootstrap.bundle.min.js"></script>
+    <script src="js/vendor/OverlayScrollbars.min.js"></script>
+    <script src="js/vendor/autoComplete.min.js"></script>
+    <script src="js/vendor/clamp.min.js"></script>
+    <script src="icon/acorn-icons.js"></script>
+    <script src="icon/acorn-icons-interface.js"></script>
 
     <!-- Vendor Scripts End -->
 
     <!-- Template Base Scripts Start -->
-    <script src="{{asset('acorn/js/base/helpers.js')}}"></script>
-    <script src="{{asset('acorn/js/base/globals.js')}}"></script>
-    <script src="{{asset('acorn/js/base/nav.js')}}"></script>
-    <script src="{{asset('acorn/js/base/search.js')}}"></script>
-    <script src="{{asset('acorn/js/base/settings.js')}}"></script>
+    <script src="js/base/helpers.js"></script>
+    <script src="js/base/globals.js"></script>
+    <script src="js/base/nav.js"></script>
+    <script src="js/base/search.js"></script>
+    <script src="js/base/settings.js"></script>
     <!-- Template Base Scripts End -->
     <!-- Page Specific Scripts Start -->
 
-    <script src="{{asset('acorn/js/pages/auth.login.js')}}"></script>
+    <script src="js/pages/vertical.js"></script>
 
-    <script src="{{asset('acorn/js/common.js')}}"></script>
-    <script src="{{asset('acorn/js/scripts.js')}}"></script>
+    <script src="js/common.js"></script>
+    <script src="js/scripts.js"></script>
     <!-- Page Specific Scripts End -->
   </body>
 </html>

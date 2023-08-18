@@ -45,6 +45,7 @@ class UserController extends Controller
     public function create(Request $request){
         $request->validate([
             'name' => 'required',
+            'surname' => 'required',
             'email' => 'required',
             'password' => 'required',
             'cpassword' => 'required|same:password'
@@ -52,6 +53,7 @@ class UserController extends Controller
 
         $user = new User();
         $user->name = $request->name;
+        $user->surname = $request->surname;
         $user->email = $request->email;
         $user->password = $request->password;
         $save = $user->save();
@@ -65,21 +67,10 @@ class UserController extends Controller
 
     }
 
-//     public function register(Request $request)
-// {
-//     // Créer un nouvel utilisateur
-//     $user = User::create([
-//         'name' => $request->input('name'),
-//         'email' => $request->input('email'),
-//         'password' => bcrypt($request->input('password')),
-//     ]);
+    public function profile(){
+        return view('dashboard.user.profile');
+    }
 
-//     // Envoyer un email à l'administrateur
-//     Mail::to('admin@example.com')->send(new NewUserNotification($user));
-
-//     // Rediriger l'utilisateur vers une page de confirmation
-//     return redirect()->route('confirmation')->with('success', 'Votre inscription est en attente de confirmation.');
-// }
 
     function check(Request $request){
         //validate inputs
@@ -100,7 +91,7 @@ class UserController extends Controller
 
     function logout(){
         Auth::guard('web')->logout();
-        return redirect('/login');
+        return redirect('/');
     }
     
 

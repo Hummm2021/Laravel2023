@@ -91,7 +91,7 @@
                 <div class="col-6 ps-1 pe-1">
                   <ul class="list-unstyled">
                     <li>
-                      <a href="#">User Info</a>
+                      <a href="{{route('user.profile', Auth::guard('web')->user()->id)}}">Profile</a>
                     </li>
                     <li>
                       <a href="#">Calendar</a>

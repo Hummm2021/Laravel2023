@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
+    // var $tickets = Ticket::all();
+    
     public function login(){
         return view('dashboard.admin.login');
     }
@@ -18,6 +20,11 @@ class AdminController extends Controller
     public function home(){
         $tickets = Ticket::all();
         return view('dashboard.admin.home', compact('tickets'));
+    }
+
+    public function ticket(){
+        $tickets = Ticket::all();
+        return view('dashboard.admin.ticket', compact('tickets'));
     }
 
     function check(Request $request){
