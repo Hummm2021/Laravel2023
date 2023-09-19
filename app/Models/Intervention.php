@@ -22,11 +22,11 @@ class Intervention extends Model
 
     public function demande(): belongsTo
     {
-        return $this->belongsTo(Demande::class);
+        return $this->belongsTo(Demande::class, 'demande_id');
     }
 
     public function user(): BelongsTo
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id');
     }
 }

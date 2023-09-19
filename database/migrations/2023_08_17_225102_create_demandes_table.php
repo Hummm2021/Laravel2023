@@ -14,12 +14,12 @@ return new class extends Migration
     {
         Schema::create('demandes', function (Blueprint $table) {
             $table->id();
-            $table->enum('status', ['EN ATTENTE', 'ACCEPTE', 'REFUSE'])->default('EN ATTENTE');
+            $table->enum('status', ['EN ATTENTE', 'ACCEPTE', 'RESOLUE'])->default('EN ATTENTE');
             $table->string('object');
             $table->text('description'); 
-            $table->timestamps();
-            $table->unsignedBigInteger('user_id'); 
-            $table->foreign('user_id')->references('id')->on('users');    
+            $table->timestamps(); 
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

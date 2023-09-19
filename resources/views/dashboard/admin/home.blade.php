@@ -17,218 +17,250 @@
             </div>
           </div>
         </div>
-        <h2 class="small-title">Stats</h2>
       </div>
-<!-- Stats Start -->
+      <!-- Stats Start -->
 
-{{-- <div class="row g-2">
-  <div class="col-12 p-0">
-    <div class="glide glide-small" id="statsCarousel">
-      <div class="glide__track" data-glide-el="track">
-        <div class="glide__slides">
-          <div class="glide__slide">
-            <div class="card mb-5 sh-20 hover-border-primary">
-              <div class="h-100 p-4 text-center align-items-center d-flex flex-column justify-content-between">
-                <div class="d-flex flex-column justify-content-center align-items-center sh-5 sw-5 rounded-xl bg-gradient-light mb-2">
-                  <i data-acorn-icon="alarm" class="text-white"></i>
+      {{-- <div class="row g-2">
+        <div class="col-12 p-0">
+          <div class="glide glide-small" id="statsCarousel">
+            <div class="glide__track" data-glide-el="track">
+              <div class="glide__slides">
+                <div class="glide__slide">
+                  <div class="card mb-5 sh-20 hover-border-primary">
+                    <div class="h-100 p-4 text-center align-items-center d-flex flex-column justify-content-between">
+                      <div class="d-flex flex-column justify-content-center align-items-center sh-5 sw-5 rounded-xl bg-gradient-light mb-2">
+                        <i data-acorn-icon="alarm" class="text-white"></i>
+                      </div>
+                      <p class="mb-0 lh-1">Tickets Ouverts</p>
+                      <p class="cta-3 mb-0 text-primary">25</p>
+                    </div>
+                  </div>
                 </div>
-                <p class="mb-0 lh-1">Tickets Ouverts</p>
-                <p class="cta-3 mb-0 text-primary">25</p>
-              </div>
-            </div>
-          </div>
-          <div class="glide__slide">
-            <div class="card mb-5 sh-20 hover-border-primary">
-              <div class="h-100 p-4 text-center align-items-center d-flex flex-column justify-content-between">
-                <div class="d-flex flex-column justify-content-center align-items-center sh-5 sw-5 rounded-xl bg-gradient-light mb-2">
-                  <i data-acorn-icon="navigate-diagonal" class="text-white"></i>
+                <div class="glide__slide">
+                  <div class="card mb-5 sh-20 hover-border-primary">
+                    <div class="h-100 p-4 text-center align-items-center d-flex flex-column justify-content-between">
+                      <div class="d-flex flex-column justify-content-center align-items-center sh-5 sw-5 rounded-xl bg-gradient-light mb-2">
+                        <i data-acorn-icon="navigate-diagonal" class="text-white"></i>
+                      </div>
+                      <p class="mb-0 lh-1">Shipped Orders</p>
+                      <p class="cta-3 mb-0 text-primary">48</p>
+                    </div>
+                  </div>
                 </div>
-                <p class="mb-0 lh-1">Shipped Orders</p>
-                <p class="cta-3 mb-0 text-primary">48</p>
-              </div>
-            </div>
-          </div>
-          <div class="glide__slide">
-            <div class="card mb-5 sh-20 hover-border-primary">
-              <div class="h-100 p-4 text-center align-items-center d-flex flex-column justify-content-between">
-                <div class="d-flex flex-column justify-content-center align-items-center sh-5 sw-5 rounded-xl bg-gradient-light mb-2">
-                  <i data-acorn-icon="check-circle" class="text-white"></i>
+                <div class="glide__slide">
+                  <div class="card mb-5 sh-20 hover-border-primary">
+                    <div class="h-100 p-4 text-center align-items-center d-flex flex-column justify-content-between">
+                      <div class="d-flex flex-column justify-content-center align-items-center sh-5 sw-5 rounded-xl bg-gradient-light mb-2">
+                        <i data-acorn-icon="check-circle" class="text-white"></i>
+                      </div>
+                      <p class="mb-0 lh-1">Delivered Orders</p>
+                      <p class="cta-3 mb-0 text-primary">53</p>
+                    </div>
+                  </div>
                 </div>
-                <p class="mb-0 lh-1">Delivered Orders</p>
-                <p class="cta-3 mb-0 text-primary">53</p>
-              </div>
-            </div>
-          </div>
-          <div class="glide__slide">
-            <div class="card mb-5 sh-20 hover-border-primary">
-              <div class="h-100 p-4 text-center align-items-center d-flex flex-column justify-content-between">
-                <div class="d-flex flex-column justify-content-center align-items-center sh-5 sw-5 rounded-xl bg-gradient-light mb-2">
-                  <i data-acorn-icon="arrow-bottom-left" class="text-white"></i>
+                <div class="glide__slide">
+                  <div class="card mb-5 sh-20 hover-border-primary">
+                    <div class="h-100 p-4 text-center align-items-center d-flex flex-column justify-content-between">
+                      <div class="d-flex flex-column justify-content-center align-items-center sh-5 sw-5 rounded-xl bg-gradient-light mb-2">
+                        <i data-acorn-icon="arrow-bottom-left" class="text-white"></i>
+                      </div>
+                      <p class="mb-0 lh-1">Returned Orders</p>
+                      <p class="cta-3 mb-0 text-primary">4</p>
+                    </div>
+                  </div>
                 </div>
-                <p class="mb-0 lh-1">Returned Orders</p>
-                <p class="cta-3 mb-0 text-primary">4</p>
-              </div>
-            </div>
-          </div>
-          <div class="glide__slide">
-            <div class="card mb-5 sh-20 hover-border-primary">
-              <div class="h-100 p-4 text-center align-items-center d-flex flex-column justify-content-between">
-                <div class="d-flex flex-column justify-content-center align-items-center sh-5 sw-5 rounded-xl bg-gradient-light mb-2">
-                  <i data-acorn-icon="warning-hexagon" class="text-white"></i>
+                <div class="glide__slide">
+                  <div class="card mb-5 sh-20 hover-border-primary">
+                    <div class="h-100 p-4 text-center align-items-center d-flex flex-column justify-content-between">
+                      <div class="d-flex flex-column justify-content-center align-items-center sh-5 sw-5 rounded-xl bg-gradient-light mb-2">
+                        <i data-acorn-icon="warning-hexagon" class="text-white"></i>
+                      </div>
+                      <p class="mb-0 lh-1">Unconfirmed Orders</p>
+                      <p class="cta-3 mb-0 text-primary">3</p>
+                    </div>
+                  </div>
                 </div>
-                <p class="mb-0 lh-1">Unconfirmed Orders</p>
-                <p class="cta-3 mb-0 text-primary">3</p>
-              </div>
-            </div>
-          </div>
-          <div class="glide__slide">
-            <div class="card mb-5 sh-20 hover-border-primary">
-              <div class="h-100 p-4 text-center align-items-center d-flex flex-column justify-content-between">
-                <div class="d-flex flex-column justify-content-center align-items-center sh-5 sw-5 rounded-xl bg-gradient-light mb-2">
-                  <i data-acorn-icon="pin" class="text-white"></i>
+                <div class="glide__slide">
+                  <div class="card mb-5 sh-20 hover-border-primary">
+                    <div class="h-100 p-4 text-center align-items-center d-flex flex-column justify-content-between">
+                      <div class="d-flex flex-column justify-content-center align-items-center sh-5 sw-5 rounded-xl bg-gradient-light mb-2">
+                        <i data-acorn-icon="pin" class="text-white"></i>
+                      </div>
+                      <p class="mb-0 lh-1">Missing Orders</p>
+                      <p class="cta-3 mb-0 text-primary">2</p>
+                    </div>
+                  </div>
                 </div>
-                <p class="mb-0 lh-1">Missing Orders</p>
-                <p class="cta-3 mb-0 text-primary">2</p>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</div> --}}
-<!-- Stats Start -->
+      </div> --}}
+      <!-- Stats Start -->
       <div class="mb-5">
         <div class="row g-2">
-          <div class="col-12 col-sm-3 col-lg-3">
+          <a href="{{ route('admin.demande-enattente') }}" class="col-12 col-sm-3 col-lg-3">
             <div class="card sh-20 hover-scale-up cursor-pointer hover-border-primary">
               <div class="h-100 p-4 text-center align-items-center d-flex flex-column justify-content-between">
                   <div class="d-flex flex-column justify-content-center align-items-center sh-5 sw-5 rounded-xl bg-gradient-light mb-2">
                     <i data-acorn-icon="navigate-diagonal" class="text-white"></i>
                   </div>
-                <p class="mb-0 lh-1">Tickets Ouverts</p>
-                <p class="cta-3 mb-0 text-primary">48</p>
+                <p class="mb-0 lh-1">Demandes En attente</p>
+                <p class="cta-3 mb-0 text-primary">{{ $demandeEnvoyees }}</p>
               </div>
             </div>
-          </div>
+          </a>
 
-          <div class="col-12 col-sm-3 col-lg-3">
+          <a href="{{ route('admin.demande-acceptees') }}" class="col-12 col-sm-3 col-lg-3">
             <div class="card sh-20 hover-scale-up cursor-pointer hover-border-primary">
               <div class="h-100 p-4 text-center align-items-center d-flex flex-column justify-content-between">
                   <div class="d-flex flex-column justify-content-center align-items-center sh-5 sw-5 rounded-xl bg-gradient-light mb-2">
                     <i data-acorn-icon="check" class="text-white"></i>
                   </div>
-                <p class="mb-0 lh-1">Tickets Confirmés</p>
-                <p class="cta-3 mb-0 text-primary">48</p>
+                <p class="mb-0 lh-1">Demandes Répondues</p>
+                <p class="cta-3 mb-0 text-primary"> {{$demandeRepondues}} </p>
               </div>
             </div>
-          </div>
+          </a>
 
-          <div class="col-12 col-sm-3 col-lg-3">
+          <a href="{{ route('admin.demande-resolues') }}" class="col-12 col-sm-3 col-lg-3">
             <div class="card sh-20 hover-scale-up cursor-pointer hover-border-primary">
               <div class="h-100 p-4 text-center align-items-center d-flex flex-column justify-content-between">
                   <div class="d-flex flex-column justify-content-center align-items-center sh-5 sw-5 rounded-xl bg-gradient-light mb-2">
                     <i data-acorn-icon="alarm" class="text-white"></i>
                   </div>
-                <p class="mb-0 lh-1">Tickets fermés</p>
-                <p class="cta-3 mb-0 text-primary">48</p>
+                <p class="mb-0 lh-1">Demandes Résolues</p>
+                <p class="cta-3 mb-0 text-primary">{{ $demandeResolues }}</p>
               </div>
             </div>
-          </div>
+          </a>
 
           <div class="col-12 col-sm-3 col-lg-3">
-            <div class="card sh-20 hover-scale-up cursor-pointer hover-border-primary">
+            <a href="{{ route('admin.demande') }}" class="card sh-20 hover-scale-up cursor-pointer hover-border-primary">
               <div class="h-100 p-4 text-center align-items-center d-flex flex-column justify-content-between">
                   <div class="d-flex flex-column justify-content-center align-items-center sh-5 sw-5 rounded-xl bg-gradient-light mb-2">
                     <i data-acorn-icon="sync-horizontal" class="text-white"></i>
                   </div>
-                <p class="mb-0 lh-1">Total</p>
-                <p class="cta-3 mb-0 text-primary">48</p>
+                <p class="mb-0 lh-1">Total Demandes</p>
+                <p class="cta-3 mb-0 text-primary">{{ $totalDemandes}}</p>
               </div>
-            </div>
+            </a>
           </div>
         </div>
       </div>
       <!-- Stats End -->
-
-      <!-- Sales Start -->
-      <h2 class="small-title">Sales</h2>
-      <div class="card mb-5 sh-40">
+      {{-- <div class="card mb-2 sh-10 sh-md-8 hover-border-primary" class="h-100">
         <div class="card-body">
-          <div class="custom-legend-container mb-3 pb-3 d-flex flex-row"></div>
-          <!-- Custom legend template used by js -->
-          <template class="custom-legend-item">
-            <a href="#" class="d-flex flex-row g-0 align-items-center me-5">
-              <div class="pe-2">
-                <div class="icon-container border sh-5 sw-5 rounded-xl d-flex justify-content-center align-items-center">
-                  <i class="icon"></i>
-                </div>
+          <div id="columnchart_material" style="width: auto; height: auto;" ></div>
+          <div id="columnchart_material" class="h-100"></div>
+        </div>
+      </div> --}}
+
+      <div class="d-flex justify-content-between hover-border-primary"  >
+        <div class="col-12 col-lg-12 mb-3" id="columnchart_material"></div>
+      </div>      
+    </div>
+    
+    <!-- demande Detail Modal Start -->
+    @forelse (($demandes) as $demande)
+      @include('layouts.demandeDetailModal')      
+    @endforeach
+    <!-- demande Detail Modal End -->
+
+    
+    <div class="col-12 col-lg-6 mb-5">
+
+            <!-- Demande Start -->
+      {{-- <h2 class="small-title">Demandes en cours</h2> --}}
+      <div class="d-flex justify-content-between">
+        <h2 class="small-title">Demandes en cours</h2>
+        <a href="{{ route('admin.demande') }}" class="btn btn-icon btn-icon-end btn-xs btn-background-alternate p-0 text-small" type="button">
+          <span class="align-bottom">Tout voir</span>
+          <i data-acorn-icon="chevron-right" class="align-middle" data-acorn-size="12"></i>
+        </a>
+      </div>
+      <div class="scroll-by-count mb-3" data-count="3">
+        @forelse (($demandes) as $demande)
+        {{-- <div class="card mb-2 sh-10 sh-md-8 hover-border-primary"> --}}
+        <a href="#" class="card mb-2 sh-10 sh-md-8 hover-border-primary" data-bs-toggle="modal" data-bs-target="#demandeModal{{ $demande->id }}" data-bs-focus="false">
+          <div class="card-body pt-0 pb-0 h-100 ">
+            <div class="row g-0 h-100 align-content-center">
+              <div class="col-4 col-md-2 d-flex align-items-center mb-2 mb-md-0 ">
+                #{{ $demande->id }}
               </div>
-              <div>
-                <div class="text p mb-0 d-flex align-items-center text-small text-muted">Title</div>
-                <div class="value cta-4">Value</div>
+              <div class="col-8 col-md-4 d-flex align-items-center mb-2 mb-md-0">
+                {{ $demande->user->name }} {{ $demande->user->surname }}
               </div>
-            </a>
-          </template>
-          <!-- Custom Legend Template End -->
-          <div class="sh-25">
-            <canvas id="customLegendBarChart"></canvas>
-            <!-- Custom tooltip template used by js -->
-            <div
-              class="custom-tooltip position-absolute bg-foreground rounded-md border border-separator pe-none p-3 d-flex z-index-1 align-items-center opacity-0 basic-transform-transition"
-            >
-              <div
-                class="icon-container border d-flex align-middle align-items-center justify-content-center align-self-center rounded-xl sh-5 sw-5 rounded-xl me-3"
-              >
-                <span class="icon"></span>
-              </div>
-              <div>
-                <span class="text d-flex align-middle text-muted align-items-center text-small">Bread</span>
-                <span class="value d-flex align-middle align-items-center cta-4">300</span>
-              </div>
+              <div class="col-8 col-md-4 d-flex align-items-center mb-2 mb-md-0 text-muted text-medium">
+                {{ $demande->created_at->format('d-m-Y') }}
+              </div>                
+              <div class="col-4 col-md-2 d-flex align-items-center justify-content-end text-muted text-medium">
+                @if ($demande->status=='EN ATTENTE')
+                <span class="badge bg-outline-warning me-1">{{ $demande->status }}</span>
+                @elseif ($demande->status=='RESOLUE')
+                <span class="badge bg-outline-success me-1">{{ $demande->status }}</span>
+                @else
+                <span class="badge bg-outline-info me-1">{{ $demande->status }}</span>
+                @endif  
+              </div>  
             </div>
           </div>
-        </div>
+        </a>
+        
+        @empty
+            <span>Aucune demande n'a encore été ajoutée.</span>
+        @endforelse
       </div>
-      <!-- Sales End -->
-    </div>
+      <!-- Demande End -->
 
-    <!-- Products Start -->
-    <div class="col-12 col-lg-6 mb-5">
+      <!-- Intervention Start -->
       <div class="d-flex justify-content-between">
-        <h2 class="small-title">Stocks</h2>
-        <button class="btn btn-icon btn-icon-end btn-xs btn-background-alternate p-0 text-small" type="button">
-          <span class="align-bottom">View More</span>
+          <h2 class="small-title">Interventions en cours</h2>
+        <a href="{{ route('admin.intervention') }}" class="btn btn-icon btn-icon-end btn-xs btn-background-alternate p-0 text-small" type="button">
+          <span class="align-bottom">Tout voir</span>
           <i data-acorn-icon="chevron-right" class="align-middle" data-acorn-size="12"></i>
-        </button>
+        </a>
       </div>
       <div class="scroll-out">
-        <div class="scroll-by-count" data-count="8">                    
-          <div class="card mb-2 sh-10 sh-md-8">
-            <div class="card-body pt-0 pb-0 h-100">
-              <div class="row g-0 h-100 align-content-center">
-                <div class="col-4 col-md-1 d-flex align-items-center mb-2 mb-md-0 ">
-                  #{{-- #{{ $ticket->id }} --}}
+        <div class="scroll-out">
+          <div class="scroll-by-count" data-count="3">
+            @forelse (($interventions) as $intervention)
+            {{-- <div class="card mb-2 sh-10 sh-md-8 hover-border-primary"> --}}
+            <a href="#" class="card mb-2 sh-10 sh-md-8 hover-border-primary" data-bs-toggle="modal" data-bs-target="#imageModal{{ $intervention->id }}" data-bs-focus="false">
+              <div class="card-body pt-0 pb-0 h-100 ">
+                <div class="row g-0 h-100 align-content-center">
+                  <div class="col-4 col-md-2 d-flex align-items-center mb-2 mb-md-0 ">
+                    #{{ $intervention->id }}
+                  </div>
+                  <div class="col-8 col-md-4 d-flex align-items-center mb-2 mb-md-0">
+                    {{ $intervention->type_depannage }}
+                  </div>
+                  <div class="col-8 col-md-4 d-flex align-items-center mb-2 mb-md-0 text-muted text-medium">
+                    {{ $intervention->created_at->format('d-m-Y') }}
+                  </div>                
+                  <div class="col-4 col-md-2 d-flex align-items-center justify-content-end text-muted text-medium">
+                    @if ($intervention->status=='EN COURS')
+                    <span class="badge bg-outline-warning me-1">{{ $intervention->status }}</span>
+                    @elseif ($intervention->status=='RESOLU')
+                    <span class="badge bg-outline-success me-1">{{ $intervention->status }}</span>
+                    @else
+                    <span class="badge bg-outline-danger me-1">{{ $intervention->status }}</span>
+                    @endif  
+                  </div>  
                 </div>
-                <div class="col-8 col-md-4 d-flex align-items-center mb-2 mb-md-0">
-                  <a href="Pages.Portfolio.Detail.html" class="body-link text-truncate">Biscotti</a>
-                </div>
-                <div class="col-4 col-md-2 d-flex align-items-center text-muted text-medium mb-1 mb-md-0">
-                  <span class="badge bg-outline-secondary me-1">TREND</span>
-                </div>
-                <div class="col-4 col-md-3 d-flex align-items-center text-medium text-success justify-content-center">
-                  <i data-acorn-icon="arrow-top" data-acorn-size="14" class="me-1"></i>
-                  <span class="text-medium">+2.3%</span>
-                </div>
-                <div class="col-4 col-md-2 d-flex align-items-center justify-content-end text-muted text-medium">
-                  <span class="badge bg-outline-secondary me-1">TREND</span>
-                </div>  
               </div>
-            </div>
+            </a>
+            @empty
+                <span>Aucune intervention n'a encore été lancée.</span>
+            @endforelse
           </div>
-        </div>
+        </div> 
       </div>
-    </div>
-    <!-- Products End -->
+    </div>  
+    @foreach ($interventions as $intervention)
+    @include('layouts.interventionDetailModal')
+    @endforeach
+    <!-- Intervention Start -->
+
 </div>
 @endsection

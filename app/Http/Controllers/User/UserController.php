@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\User;
 
 use App\Models\User;
-use App\Mail\TestMail;
+// use App\Mail\TestMail;
 
 use App\Models\Ticket;
+use App\Models\Demande;
+use App\Models\Intervention;
 use Illuminate\Http\Request;
 use App\Mail\WelcomeUserMail;
 use App\Http\Controllers\Controller;
@@ -22,34 +24,31 @@ class UserController extends Controller
     }
 
     public function home(){
-        $TypesDeDemandes = [
-            'Problème de connexion réseau',
-            'Problème d\'alimentation',
-            'Problème de vitesse ou de performance',
-            'Problème de logiciel',
-            'Problème de matériel',
-            'Problème de périphérique',
-            'Problème de sécurité',
-            'Problème de sauvegarde ou de récupération de données',
-            'Problème de maintenance',
-            'Problème de compatibilité',
-            'Problème de configuration',
-            'Problème d\'affichage'
-        ]; 
-
-        $tickets = Ticket::all();
-
-        return view('dashboard.user.home', compact('tickets'));
-    }
+        $demandes = Demande::where('user_id', auth()->user()->id)->orderBy('created_at', 'desc')->get();
+        $interventions = Intervention::where('user_id', auth()->user()->id)->orderBy('created_at', 'desc')->get();       
+        $intervenants = User::where('id', auth()->user()->id)->get();
+        // $intervenants = User::where('profile', 'utilisateur', )->get();
+        return view('dashboard.user.demande.demande', compact(['demandes', 'interventions', 'intervenants']));
+}
     
     public function create(Request $request){
         $request->validate([
             'name' => 'required',
             'surname' => 'required',
-            'email' => 'required',
-            'password' => 'required',
-            'cpassword' => 'required|same:password'
-        ]);
+            'email' => 'required|unique:users,email',
+            'password' => 'required|min:8',
+            'cpassword' => 'required|same:password'],
+            [
+                'email.unique' => 'Email déja utilisé, veuillez utiliser un autre email.',
+                'password.min' => 'Votre mot de passe doit avoir au moins 8 caractères.',
+                'cpassword.same' => 'Entrez le même mot de passe SVP.',
+                'email.required' => 'Email requis',
+                'password.required' => 'Mot de passe requis',
+                'cpassword.required' => 'Confirmation du mot de passe requis',
+                'name.required' => 'Nom requis',
+                'surname.required' => 'Prénoms requis'
+            ] 
+        );
 
         $user = new User();
         $user->name = $request->name;
@@ -60,14 +59,20 @@ class UserController extends Controller
         Mail::to('2021housseiny555@gmail.com')->send(new WelcomeUserMail);
 
         if($save){
-            return redirect()->back()->with('success', 'Vous êtes maintenant inscrit');
+            return redirect()->route('user.login')->with('success', 'Vous êtes inscrit maintenant.');
         }else{
-            return redirect()->back()->with('fail','Une erreur s\'est produite' );
+            return redirect()->back()->with('fail','Une erreur s\'est produite.' );
         }
 
     }
 
+    // public function profile($id){
+    //     $user = User::find($id);
+    //     return view('dashboard.user.profile', compact('user'));
+    // }
+
     public function profile(){
+        // $user = User::find($id);
         return view('dashboard.user.profile');
     }
 
@@ -78,7 +83,9 @@ class UserController extends Controller
             'email'=>'required|email|exists:users,email',
             'password'=>'required',
         ], [
-            'email.existe'=>'Cet email n\'est pas dans la BD'
+            'email.exists'=>'Veuillez entrer des informations correctes.',
+            'email.required'=>'Email requis',
+            'password.required'=>'Mot de passe requis'
         ]);
 
         $creds = $request->only('email', 'password');
@@ -91,7 +98,7 @@ class UserController extends Controller
 
     function logout(){
         Auth::guard('web')->logout();
-        return redirect('/');
+        return redirect('/user/login');
     }
     
 

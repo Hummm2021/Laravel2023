@@ -3267,7 +3267,7 @@ img {
 }
 
 .fixed-background {
-  background: url("../img/background/background-blue.webp") no-repeat center center fixed;
+  background: url("../img/background/pfo-africa-pont-cocobe-1-640x320.jpg") no-repeat center center fixed;
   background-size: cover;
   width: 100%;
   height: 100%;
@@ -14480,11 +14480,21 @@ html[data-placement=vertical] .nav-container .language-switch-container .languag
   background: rgba(255, 255, 255, 0.05);
 }
 html[data-placement=horizontal] .nav-container .logo img,
-html[data-placement=horizontal] .nav-container .logo .img,
+html[data-placement=horizontal] .nav-container .logo .img
+/* html[data-placement=vertical] .nav-container .logo img, 
+html[data-placement=vertical] .nav-container .logo .img*/ {
+  width: 150px;
+  min-height: 35px;
+  object-position: left;
+  object-fit: cover;
+  transition: width var(--transition-time), height var(--transition-time);
+}
+/* html[data-placement=horizontal] .nav-container .logo img,
+html[data-placement=horizontal] .nav-container .logo .img, */
 html[data-placement=vertical] .nav-container .logo img,
 html[data-placement=vertical] .nav-container .logo .img {
-  width: 100px;
-  min-height: 35px;
+  width: 50px;
+  /* min-height: 35px; */
   object-position: left;
   object-fit: cover;
   transition: width var(--transition-time), height var(--transition-time);
@@ -15470,8 +15480,8 @@ html[data-navcolor=dark] .nav-container .menu-container .menu a.active, html[dat
 }
 
 .logo-default {
-  width: 100px;
-  min-height: 35px;
+  max-width: 100%;
+  max-height: auto;
   object-position: left;
   object-fit: cover;
   background-repeat: no-repeat;
@@ -15505,7 +15515,7 @@ html[data-color=light-blue] .logo-default {
 }
 
 html[data-color=light-green] .logo-default {
-  background-image: url(../img/logo/logo-green-light.svg);
+  background-image: url(../img/logo/logo-green-dark.png);
 }
 
 html[data-color=light-red] .logo-default {

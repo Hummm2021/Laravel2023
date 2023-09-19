@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 
@@ -52,18 +53,25 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    // public function tickets()
-    // {
-    //     return $this->hasMany(Ticket::class, 'assigned_to_user_id', 'id');
-    // }
+   
 
     public function demandes(): HasMany
     {
         return $this->hasMany(Demande::class);
     }
 
-    // public function technicien()
-    // {
-    //     return $this->hasOne(Technicien::class);
-    // }
+    public function direction(): BelongsTo
+    {
+        return $this->belongsTo(Direction::class);
+    }
+
+    public function sousDirection(): BelongsTo
+    {
+        return $this->belongsTo(SousDirection::class);
+    }
+
+    public function service(): BelongsTo
+    {
+        return $this->belongsTo(Service::class);
+    }
 }

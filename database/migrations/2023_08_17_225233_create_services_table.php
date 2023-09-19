@@ -13,7 +13,12 @@ return new class extends Migration
     {
         Schema::create('services', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
             $table->timestamps();
+            $table->unsignedBigInteger('direction_id');
+            $table->foreign('direction_id')->references('id')->on('directions');
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

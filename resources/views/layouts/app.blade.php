@@ -2,8 +2,11 @@
 <html
   lang="fr"
   data-footer="true"
-  data-override='{"attributes": {"placement": "horizontal","layout": "boxed" }, "showSettings":false, "storagePrefix": "starter-project"}'
+  {{-- data-override='"showSettings":false}' --}}
+  {{-- data-override='{"attributes": {"placement": "horizontal","layout": "boxed" }, "showSettings":false, "storagePrefix": "starter-project"}' --}}
+  {{-- data-placement="horizontal" data-behaviour="pinned" data-layout="fluid" data-radius="rounded" data-color="light-green" data-navcolor="light-green" data-show="true" data-dimension="mobile" --}}
 >
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
@@ -44,10 +47,90 @@
     <!-- Vendor Styles End -->
     <!-- Template Base Styles Start -->
     <link rel="stylesheet" href="{{asset('acorn/css/styles.css')}}" />
+  
     <!-- Template Base Styles End -->
 
     <link rel="stylesheet" href="{{asset('acorn/css/main.css')}}" />
     <script src="{{asset('acorn/js/base/loader.js')}}"></script>
+    @if(request()->route()->getName() === 'admin.home')
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['2023', 'Reçues', 'résolues'],
+          ['Avril', {{ $avril }}, {{ $avrilR }}],
+          ['Mai', {{ $mai }}, {{ $maiR }}],
+          ['Juin', {{ $juin }}, {{ $juinR }}],
+          ['Juillet', {{ $juillet }}, {{ $juilletR }}],
+          ['Aout', {{ $aout }}, {{ $aoutR }}],
+          ['Septembre', {{$septembre}}, {{$septembreR}}],
+          ['Octobre', {{$octobre}}, {{$octobreR}}],
+          ['Novembre', {{$novembre}}, {{$novembreR}}],
+          ['Decembre', {{$decembre}}, {{$decembreR}}]
+        ]);
+
+        var options = {
+          chart: {
+            title: 'Demandes Support technique',
+            subtitle: 'Reçues  et résolues: Avril-Décembre 2023',
+          },bars: 'vertical',
+            vAxis: {format: 'decimal'},
+            height: 300,
+            colors: ['#d95f02', '#1b9e77']
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+        
+      }
+
+      
+
+
+      //       google.charts.load('current', {'packages':['bar']});
+      // google.charts.setOnLoadCallback(drawChart);
+
+      // function drawChart() {
+      //   var data = google.visualization.arrayToDataTable([
+      //     ['Year', 'Sales', 'Expenses', 'Profit'],
+      //     ['2014', 1000, 400, 200],
+      //     ['2015', 1170, 460, 250],
+      //     ['2016', 660, 1120, 300],
+      //     ['2017', 1030, 540, 350]
+      //   ]);
+
+      //   var options = {
+      //     chart: {
+      //       title: 'Company Performance',
+      //       subtitle: 'Sales, Expenses, and Profit: 2014-2017',
+      //     },
+      //     bars: 'vertical',
+      //     vAxis: {format: 'decimal'},
+      //     height: 400,
+      //     colors: ['#1b9e77', '#d95f02', '#7570b3']
+      //   };
+
+      //   var chart = new google.charts.Bar(document.getElementById('chart_div'));
+
+      //   chart.draw(data, google.charts.Bar.convertOptions(options));
+
+      //   var btns = document.getElementById('btn-group');
+
+      //   btns.onclick = function (e) {
+
+      //     if (e.target.tagName === 'BUTTON') {
+      //       options.vAxis.format = e.target.id === 'none' ? '' : e.target.id;
+      //       chart.draw(data, google.charts.Bar.convertOptions(options));
+      //     }
+      //   }
+      // }
+    </script>
+    @endif
+    
   </head>
 
   <body>
@@ -58,10 +141,10 @@
           <div class="logo position-relative">
             <a href="#">
               <!-- Logo can be added directly -->
-              <!-- <img src="img/logo/logo-white.svg" alt="logo" /> -->
+              <img src="{{asset('acorn/img/logo/image-removebg-preview.png')}}" alt="logo" />
 
               <!-- Or added via css to provide different ones for different color themes -->
-              <div class="img"></div>
+              {{-- <div class="img"></div> --}}
             </a>
           </div>
           <!-- Logo End -->
@@ -96,18 +179,18 @@
                       {{-- <a href="{{route('user.profile', Auth::guard('web')->user()->id)}}">Profile</a> --}}
                     </li>
                     <li>
-                      <a href="#">Calendar</a>
+                      <a href="#">Calendrier</a>
                     </li>
                   </ul>
                 </div>
                 <div class="col-6 pe-1 ps-1">
                   <ul class="list-unstyled">
                     <li>
-                      <a href="#">Security</a>
+                      <a href="#">Securité</a>
                     </li>
-                    <li>
+                    {{-- <li>
                       <a href="#">Billing</a>
-                    </li>
+                    </li> --}}
                   </ul>
                 </div>
               </div>
@@ -118,21 +201,21 @@
                 <div class="col-6 ps-1 pe-1">
                   <ul class="list-unstyled">
                     <li>
-                      <a href="#">Themes</a>
+                      <a href="#">Thèmes</a>
                     </li>
                     <li>
-                      <a href="#">Language</a>
+                      <a href="#">Langue</a>
                     </li>
                   </ul>
                 </div>
                 <div class="col-6 pe-1 ps-1">
                   <ul class="list-unstyled">
                     <li>
-                      <a href="#">Devices</a>
+                      <a href="#">Appareil</a>
                     </li>
-                    <li>
+                    {{-- <li>
                       <a href="#">Storage</a>
-                    </li>
+                    </li> --}}
                   </ul>
                 </div>
               </div>
@@ -145,13 +228,13 @@
                     <li>
                       <a href="#">
                         <i data-acorn-icon="help" class="me-2" data-acorn-size="17"></i>
-                        <span class="align-middle">Help</span>
+                        <span class="align-middle">Aide</span>
                       </a>
                     </li>
                     <li>
                       <a href="#">
                         <i data-acorn-icon="file-text" class="me-2" data-acorn-size="17"></i>
-                        <span class="align-middle">Docs</span>
+                        <span class="align-middle">FAQ</span>
                       </a>
                     </li>
                   </ul>
@@ -161,13 +244,13 @@
                     <li>
                       <a href="#">
                         <i data-acorn-icon="gear" class="me-2" data-acorn-size="17"></i>
-                        <span class="align-middle">Settings</span>
+                        <span class="align-middle text-medium">Réglage</span>
                       </a>
                     </li>
                     <li>
                       <a href="{{ route('admin.logout')}}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                         <i data-acorn-icon="logout" class="me-2" data-acorn-size="17"></i>
-                        <span class="align-middle">Logout</span>
+                        <span class="align-middle text-medium">Quitter</span>
                       </a>
                       <form action="{{route('admin.logout')}}" method="POST" class="d-none" id="logout-form">@csrf</form>
                     </li>
@@ -248,26 +331,28 @@
                     </a>
                 </li>
               <li>                
-                <a href="#">
+                <a href="{{ route('admin.demande')}}">
                   <i data-acorn-icon="file-text" class="icon" data-acorn-size="18"></i>
-                  <span class="label">Tickets</span>
+                  <span class="label">Demandes</span>
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="{{ route('admin.intervention')}}">
                   <i data-acorn-icon="trend-up" class="icon" data-acorn-size="18"></i>
-                  <span class="label">Upgrade</span>
+                  <span class="label">Interventions</span>
                 </a>
               </li>
               <li>
-                <a href="#">
-                  <i data-acorn-icon="messages" class="icon" data-acorn-size="18"></i>
-                  <span class="label">Community</span>
-                </a>
-              </li>
+                <a href="{{ route('admin.reglages') }}">
+                  <i data-acorn-icon="gear" class="icon" data-acorn-size="18"></i>
+                  <span class="label">Réglages</span>
+                </a>                
+              </li>              
             </ul>
           </div>
           <!-- Menu End -->
+
+          
 
           <!-- Mobile Buttons Start -->
           <div class="mobile-buttons-container">
@@ -296,8 +381,168 @@
         <div class="container">
             @yield('navbar')
         </div>
-      </main>
+      </main>      
     </div>
+
+    <!-- Theme Settings Modal Start -->
+<div
+class="modal fade modal-right scroll-out-negative"
+id="settings"
+data-bs-backdrop="true"
+tabindex="-1"
+role="dialog"
+aria-labelledby="settings"
+aria-hidden="true"
+>
+<div class="modal-dialog modal-dialog-scrollable full" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title">Theme Settings</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+
+    <div class="modal-body">
+      <div class="scroll-track-visible">
+        <div class="mb-5" id="color">
+          <label class="mb-3 d-inline-block form-label">Color</label>
+          <div class="row d-flex g-3 justify-content-between flex-wrap mb-3">
+            <a href="#" class="flex-grow-1 w-50 option col" data-value="light-blue" data-parent="color">
+              <div class="card rounded-md p-3 mb-1 no-shadow color">
+                <div class="blue-light"></div>
+              </div>
+              <div class="text-muted text-part">
+                <span class="text-extra-small align-middle">LIGHT BLUE</span>
+              </div>
+            </a>
+            <a href="#" class="flex-grow-1 w-50 option col" data-value="dark-blue" data-parent="color">
+              <div class="card rounded-md p-3 mb-1 no-shadow color">
+                <div class="blue-dark"></div>
+              </div>
+              <div class="text-muted text-part">
+                <span class="text-extra-small align-middle">DARK BLUE</span>
+              </div>
+            </a>
+          </div>
+          
+          <div class="row d-flex g-3 justify-content-between flex-wrap mb-3">
+            <a href="#" class="flex-grow-1 w-50 option col" data-value="light-green" data-parent="color">
+              <div class="card rounded-md p-3 mb-1 no-shadow color">
+                <div class="green-light"></div>
+              </div>
+              <div class="text-muted text-part">
+                <span class="text-extra-small align-middle">LIGHT GREEN</span>
+              </div>
+            </a>
+            <a href="#" class="flex-grow-1 w-50 option col" data-value="dark-green" data-parent="color">
+              <div class="card rounded-md p-3 mb-1 no-shadow color">
+                <div class="green-dark"></div>
+              </div>
+              <div class="text-muted text-part">
+                <span class="text-extra-small align-middle">DARK GREEN</span>
+              </div>
+            </a>
+          </div>
+
+          
+        </div>
+
+        <div class="mb-5" id="navcolor">
+          <label class="mb-3 d-inline-block form-label">Override Nav Palette</label>
+          <div class="row d-flex g-3 justify-content-between flex-wrap">
+            <a href="#" class="flex-grow-1 w-33 option col" data-value="default" data-parent="navcolor">
+              <div class="card rounded-md p-3 mb-1 no-shadow">
+                <div class="figure figure-primary top"></div>
+                <div class="figure figure-secondary bottom"></div>
+              </div>
+              <div class="text-muted text-part">
+                <span class="text-extra-small align-middle">DEFAULT</span>
+              </div>
+            </a>
+            <a href="#" class="flex-grow-1 w-33 option col" data-value="light" data-parent="navcolor">
+              <div class="card rounded-md p-3 mb-1 no-shadow">
+                <div class="figure figure-secondary figure-light top"></div>
+                <div class="figure figure-secondary bottom"></div>
+              </div>
+              <div class="text-muted text-part">
+                <span class="text-extra-small align-middle">LIGHT</span>
+              </div>
+            </a>
+            <a href="#" class="flex-grow-1 w-33 option col" data-value="dark" data-parent="navcolor">
+              <div class="card rounded-md p-3 mb-1 no-shadow">
+                <div class="figure figure-muted figure-dark top"></div>
+                <div class="figure figure-secondary bottom"></div>
+              </div>
+              <div class="text-muted text-part">
+                <span class="text-extra-small align-middle">DARK</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="mb-5" id="placement">
+          <label class="mb-3 d-inline-block form-label">Menu Placement</label>
+          <div class="row d-flex g-3 justify-content-between flex-wrap">
+            <a href="#" class="flex-grow-1 w-50 option col" data-value="horizontal" data-parent="placement">
+              <div class="card rounded-md p-3 mb-1 no-shadow">
+                <div class="figure figure-primary top"></div>
+                <div class="figure figure-secondary bottom"></div>
+              </div>
+              <div class="text-muted text-part">
+                <span class="text-extra-small align-middle">HORIZONTAL</span>
+              </div>
+            </a>
+            <a href="#" class="flex-grow-1 w-50 option col" data-value="vertical" data-parent="placement">
+              <div class="card rounded-md p-3 mb-1 no-shadow">
+                <div class="figure figure-primary left"></div>
+                <div class="figure figure-secondary right"></div>
+              </div>
+              <div class="text-muted text-part">
+                <span class="text-extra-small align-middle">VERTICAL</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="mb-5" id="behaviour">
+          <label class="mb-3 d-inline-block form-label">Menu Behaviour</label>
+          <div class="row d-flex g-3 justify-content-between flex-wrap">
+            <a href="#" class="flex-grow-1 w-50 option col" data-value="pinned" data-parent="behaviour">
+              <div class="card rounded-md p-3 mb-1 no-shadow">
+                <div class="figure figure-primary left large"></div>
+                <div class="figure figure-secondary right small"></div>
+              </div>
+              <div class="text-muted text-part">
+                <span class="text-extra-small align-middle">PINNED</span>
+              </div>
+            </a>
+            <a href="#" class="flex-grow-1 w-50 option col" data-value="unpinned" data-parent="behaviour">
+              <div class="card rounded-md p-3 mb-1 no-shadow">
+                <div class="figure figure-primary left"></div>
+                <div class="figure figure-secondary right"></div>
+              </div>
+              <div class="text-muted text-part">
+                <span class="text-extra-small align-middle">UNPINNED</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!-- Theme Settings Modal End -->
+
+  <!-- Theme Settings Button Start -->
+  {{-- <div class="settings-buttons-container">
+  <button type="button" class="btn settings-button btn-primary p-0" data-bs-toggle="modal" data-bs-target="#settings" id="settingsButton">
+    <span class="d-inline-block no-delay" data-bs-delay="0" data-bs-offset="0,3" data-bs-toggle="tooltip" data-bs-placement="left" title="Settings">
+      <i data-acorn-icon="paint-roller" class="position-relative"></i>
+    </span>
+  </button>
+  </div> --}}
+  <!-- Theme Settings Button End -->
 
 
     <!-- Search Modal Start -->
@@ -324,6 +569,19 @@
       </div>
     </div>
     <!-- Search Modal End -->
+    
+
+  <!-- Theme Settings Button Start -->
+  {{-- <div class="settings-buttons-container">
+  <button type="button" class="btn settings-button btn-primary p-0" data-bs-toggle="modal" data-bs-target="#settings" id="settingsButton">
+    <span class="d-inline-block no-delay" data-bs-delay="0" data-bs-offset="0,3" data-bs-toggle="tooltip" data-bs-placement="left" title="Settings">
+      <i data-acorn-icon="paint-roller" class="position-relative"></i>
+    </span>
+  </button>
+  </div> --}}
+  <!-- Theme Settings Button End -->
+
+
 
     <!-- Vendor Scripts Start -->
     <script src="{{asset('acorn/js/vendor/jquery-3.5.1.min.js')}}"></script>

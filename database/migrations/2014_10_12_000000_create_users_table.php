@@ -16,15 +16,17 @@ return new class extends Migration
             $table->string('name');
             $table->string('surname');
             $table->string('fonction')->nullable();
-            $table->enum('profile', ['technicien', 'utilisateur'])->default('utilisateur');            
+            $table->enum('profile', [ 'admin','technicien', 'utilisateur'])->default('utilisateur');            
             $table->string('password');
             $table->string('email')->unique();
             $table->string('mobile')->nullable();
             $table->string('phoneBureau')->nullable();
-            $table->boolean('is_approved')->default(false);
+            $table->enum('approbation', [ 'APPROUVE', 'NON APPROUVE'])->default('NON APPROUVE');            
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
+            $table->unsignedBigInteger('direction_id')->nullable();
+            $table->unsignedBigInteger('sous_direction_id')->nullable();
         });
     }
 
